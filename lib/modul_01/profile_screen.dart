@@ -45,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
 
               // TODO: Ganti dengan nama lengkap dan NIM Anda
               const Text(
-                'Nama Lengkap Mahasiswa',
+                'Safitri Yudiastuti',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -60,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(
-                  'NIM: 362458302000',
+                  'NIM: 362558302077',
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
@@ -95,7 +95,7 @@ class ProfileScreen extends StatelessWidget {
                       _ProfileInfoRow(
                         icon: Icons.calendar_month_rounded,
                         label: 'Semester & Angkatan',
-                        value: 'Semester 5 — Angkatan 2024',
+                        value: 'Semester 3 — Angkatan 2025',
                       ),
                     ],
                   ),
