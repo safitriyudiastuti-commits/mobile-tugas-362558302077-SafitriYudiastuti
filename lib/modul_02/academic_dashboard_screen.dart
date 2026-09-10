@@ -13,6 +13,7 @@ class AcademicDashboardScreen extends StatefulWidget {
 class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
   final List<Course> _courses = Course.getSampleCourses();
   bool _isDarkMode = false;
+  String _selectedCategory = 'Semua';
 
   void _toggleDarkMode() {
     setState(() {
