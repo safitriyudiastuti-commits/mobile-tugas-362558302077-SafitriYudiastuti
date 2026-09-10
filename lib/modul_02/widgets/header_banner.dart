@@ -37,17 +37,21 @@ class HeaderBanner extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: const Text(
-                  'Semester 5 (2026/2027)',
-                  style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w600),
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Text(
+                    'Semester 3 (2026/2027)',
+                    style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w600),
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
+              const SizedBox(width: 8),
               const Icon(Icons.notifications_active_outlined, color: Colors.white, size: 20),
             ],
           ),
@@ -62,13 +66,13 @@ class HeaderBanner extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
-          // Ringkasan status akademik
-          const Row(
+          // Wrap mencegah overflow pada layar sempit atau font besar.
+          const Wrap(
+            spacing: 8,
+            runSpacing: 8,
             children: [
               _StatPill(icon: Icons.task_alt, label: '4 Matakuliah'),
-              SizedBox(width: 8),
               _StatPill(icon: Icons.grade, label: 'IPK 3.85'),
-              SizedBox(width: 8),
               _StatPill(icon: Icons.calendar_month, label: '100% Hadir'),
             ],
           ),

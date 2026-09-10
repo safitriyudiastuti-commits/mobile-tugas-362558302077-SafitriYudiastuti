@@ -196,7 +196,7 @@ class _AnnouncementCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      announcement.category,
+                      announcement.category.toUpperCase(),
                       style: const TextStyle(
                         color: Color(0xFF0284C7),
                         fontSize: 11,

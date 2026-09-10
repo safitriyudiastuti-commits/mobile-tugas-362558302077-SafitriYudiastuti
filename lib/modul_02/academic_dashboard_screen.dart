@@ -64,15 +64,20 @@ class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
                       ),
                     ),
                     const SizedBox(width: 20),
-                    // Kolom kanan: grid 2 kolom daftar mata kuliah
+                    // Kolom kanan: jumlah kolom mengikuti ruang yang tersedia.
                     Expanded(
                       flex: 3,
                       child: GridView.builder(
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
+                        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                          // Lebar kartu tidak melebihi 340 dp. Pada ruang yang
+                          // cukup GridView menambah kolom; pada ruang sempit
+                          // jumlah kolom otomatis berkurang.
+                          maxCrossAxisExtent: 340,
                           crossAxisSpacing: 16,
                           mainAxisSpacing: 16,
-                          childAspectRatio: 1.4,
+                          // Tinggi eksplisit agar seluruh isi CourseCard muat.
+                          // Jangan gabungkan dengan childAspectRatio.
+                          mainAxisExtent: 240,
                         ),
                         itemCount: _courses.length,
                         itemBuilder: (context, index) {
@@ -92,7 +97,7 @@ class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
                 const HeaderBanner(),
                 const SizedBox(height: 16),
                 Text(
-                  'Mata Kuliah Semester 5 (${_courses.length} Terdaftar)',
+                  'Mata Kuliah Semester 3 (${_courses.length} Terdaftar)',
                   style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 12),

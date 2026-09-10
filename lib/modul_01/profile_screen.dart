@@ -106,7 +106,7 @@ class ProfileScreen extends StatelessWidget {
               // Tombol verifikasi dengan feedback SnackBar
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton.icon(
+                child: ElevatedButton(
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
@@ -117,8 +117,6 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  icon: const Icon(Icons.verified_user_rounded),
-                  label: const Text('Verifikasi Status Mahasiswa'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF0284C7),
                     foregroundColor: Colors.white,
@@ -126,6 +124,14 @@ class ProfileScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
+                  ),
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.verified_user_rounded),
+                      SizedBox(width: 8),
+                      Text('Verifikasi Status Mahasiswa'),
+                    ],
                   ),
                 ),
               ),

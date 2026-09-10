@@ -66,13 +66,20 @@ class CourseCard extends StatelessWidget {
                   children: [
                     Icon(Icons.meeting_room_outlined, size: 16, color: theme.colorScheme.onSurfaceVariant),
                     const SizedBox(width: 6),
-                    Text(
-                      course.room,
-                      style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                    Expanded(
+                      child: Text(
+                        course.room,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                      ),
                     ),
                   ],
                 ),
-                const Spacer(),
+                // Jarak vertikal tetap sebelum progress bar.
+                // Jangan gunakan Spacer: tinggi Column ini mengikuti konten Card,
+                // sehingga tidak memiliki sisa tinggi yang pasti untuk dibagi.
+                const SizedBox(height: 16),
 
                 // Progress bar silabus
                 Column(
